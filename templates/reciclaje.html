@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Reciclaje </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f0f7f4;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #resultado {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #2c7a7b;
+        }
+
+        :root {
+            --primary-blue: #1c3fb4;
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #232525;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex; flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            width: 100%;
+            padding: 25px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-intro {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contenedor-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 10px solid;
+        }
+
+        .contenedor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contenedor-card i { font-size: 50px; display: block; margin-bottom: 15px; }
+        .contenedor-card h3 { margin: 10px 0; font-size: 1.4rem; }
+        .contenedor-card p { font-size: 0.95rem; color: #546e7a; line-height: 1.6; }
+
+        .btn-back {
+            grid-column: 1 / -1;
+            margin: 30px auto;
+            padding: 12px 40px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-back:hover { background-color: #0c49a3; }
+
+        footer { padding: 20px; color: #78909c; font-size: 0.85rem; }
+    </style>
+    
+</head>
+<body>
+
+<main>
+
+    <h1>♻️ Juego Reciclaje </h1>
+    <h2 id="residuo"></h2>
+
+    <button onclick="verificar('papel')">🟦 Papel</button>
+    <button onclick="verificar('plastico')">🟨 Plástico</button>
+    <button onclick="verificar('vidrio')">🟩 Vidrio</button>
+    <button onclick="verificar('organico')">🟫 Orgánico</button>
+
+    <p id="resultado"></p>
+    <p>Puntos: <span id="puntos">0</span></p>
+
+   
+     <a href="{{ url_for('index') }}" class="btn-back">← Volver al Menú Principal</a>
+    </main>
+
+<footer>
+    &copy; 2025 Mi sitio web Briseida Rojas
+</footer>
+
+<script>
+const residuos = [
+    
+    { nombre: "Envase de mayonesa", tipo: "plastico" },
+    { nombre: "Cascara de platano", tipo: "organico" },
+    { nombre: "Espejos ", tipo: "vidrio" },
+    { nombre: "Hoja de cuaderno", tipo: "papel" },
+
+    { nombre: "Periodico viejo", tipo: "papel" },
+    { nombre: "Cascara de manzana", tipo: "organico" },
+    { nombre: "Parabrisas", tipo: "vidrio" },
+    { nombre: "Bidónes de Detergente", tipo: "plastico" },
+
+    { nombre: "Restos de comida", tipo: "organico" },
+    { nombre: "Treta Pak", tipo: "papel" },
+    { nombre: "Envase de yogurt", tipo: "plastico" },
+    { nombre: "Envase de mermelada", tipo: "vidrio" },
+    
+    { nombre: "Revista", tipo: "papel" },
+    { nombre: "Envases de licor", tipo: "vidrio" },
+    { nombre: "Tapa de botella", tipo: "plastico" },
+    { nombre: "Cascara de naranja", tipo: "organico" },
+    
+
+    { nombre: "Lata de refresco", tipo: "plastico" },
+    { nombre: "Carton de cereal", tipo: "papel" },
+    { nombre: "Servilleta usada", tipo: "organico" },
+    { nombre: "Frasco de perfume", tipo: "vidrio" }
+];
+
+let indice = 0;
+let puntos = 0;
+
+document.getElementById("residuo").textContent = residuos[indice].nombre;
+
+function verificar(eleccion) {
+    if (eleccion === residuos[indice].tipo) {
+        document.getElementById("resultado").textContent = "¡Correcto! ✅";
+        puntos++;
+    } else {
+        document.getElementById("resultado").textContent = "Incorrecto ❌";
+    }
+
+    document.getElementById("puntos").textContent = puntos;
+    indice = (indice + 1) % residuos.length;
+    document.getElementById("residuo").textContent = residuos[indice].nombre;
+}
+</script>
+
+</body>
+</html>

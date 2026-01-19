@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encuesta | Reciclaje Inteligente</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary-blue: #1565C0;
+    --bg-light: #E3F2FD;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --success-green: #4caf50;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-blue);
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+}
+
+header h1 { margin:0; font-size:26px; font-weight:700; }
+
+.container {
+    max-width: 700px;
+    width: 90%;
+    margin: 40px auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input[type="text"], form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+form textarea { resize: vertical; }
+
+form input[type="submit"] {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0d47a1;
+}
+
+.success-message {
+    background-color: var(--success-green);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+footer {
+    margin-top: auto;
+    padding: 25px;
+    text-align: center;
+    color: #78909c;
+    font-size: 0.85rem;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>📝 Encuesta de Reciclaje Inteligente</h1>
+</header>
+
+<main class="container">
+<h2>Comparte tu opinión</h2>
+
+{% if mensaje %}
+    <div class="success-message">{{ mensaje }}</div>
+{% endif %}
+
+<form method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Pregunta 1:</label>
+    <input type="text" name="pregunta1">
+
+    <label>Pregunta 2:</label>
+    <input type="text" name="pregunta2">
+
+    <label>Pregunta 3:</label>
+    <input type="text" name="pregunta3">
+
+    <label>Pregunta 4:</label>
+    <input type="text" name="pregunta4">
+
+    <label>Pregunta 5:</label>
+    <input type="text" name="pregunta5">
+
+    <input type="submit" value="Enviar Encuesta">
+</form>
+
+<a href="{{ url_for('index') }}" class="back-link">← Volver al Menú Principal</a>
+</main>
+
+<footer>
+&copy; 2025 Mi sitio web Briseida Rojas
+</footer>
+
+</body>
+</html>

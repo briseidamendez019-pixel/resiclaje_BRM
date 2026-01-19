@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        
+        :root { --primary: #00897B; --bg: #e0f2f1; --text: #263238; }
+
+        body { margin: 0; padding: 0; height: 100vh; font-family: 'Inter', sans-serif; background-color: var(--bg); display: flex; align-items: center; justify-content: center; }
+        .card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 400px; text-align: center; }
+        h2 { color: var(--primary); margin-bottom: 8px; }
+        p { color: #546e7a; font-size: 0.9rem; margin-bottom: 24px; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+        label { display: block; font-size: 0.85rem; margin-bottom: 5px; color: var(--text); font-weight: 600; }
+        input { width: 100%; padding: 12px; border: 1px solid #cfd8dc; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
+        .btn-submit { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 10px; }
+        .footer-link { margin-top: 20px; font-size: 0.85rem; color: #546e7a; }
+        .footer-link a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .mensaje { color: #d32f2f; font-size: 0.85rem; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Crear Cuenta</h2>
+    <p>Únete a nuestra comunidad de reciclaje</p>
+
+    <form method="POST">
+        <div class="form-group">
+            <label>Correo Electrónico</label>
+            <input type="email" name="correo" placeholder="tu@correo.com" required>
+        </div>
+        <div class="form-group">
+            <label>Contraseña Nueva</label>
+            <input type="password" name="password" placeholder="Mínimo 6 caracteres" required>
+        </div>
+        
+        <button type="submit" class="btn-submit">Completar Registro</button>
+        
+        {% if mensaje %}
+            <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+    </form>
+
+    <div class="footer-link">
+        ¿Ya eres miembro? <a href="{{ url_for('login') }}">Inicia sesión</a>
+    </div>
+</div>
+
+</body>
+</html>

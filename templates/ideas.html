@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideas Creativas | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0;
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --accent-teal: #0097A7;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex; flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            width: 100%;
+            padding: 25px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 24px; }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px 0;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .main-title {
+            text-align: center;
+            color: var(--accent-teal);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .idea-card {
+            background-color: #f8fafc;
+            border-top: 5px solid var(--accent-teal);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            background-color: #ffffff;
+            border-top-color: var(--primary-blue);
+        }
+
+        .idea-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .idea-header span {
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        .idea-header h3 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .idea-card p {
+            margin: 0;
+            line-height: 1.6;
+            color: #4a5568;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .footer-nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-back:hover { background-color: #0d47a1; }
+
+        footer { margin-top: auto; padding: 20px; color: #94a3b8; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>💡 Ideas y Proyectos para Reutilizar en Casa</h1>
+    </header>
+
+    <main class="container">
+        <div class="main-title">¡Dale una Segunda Vida a tus Materiales!</div>
+
+        <div class="ideas-grid">
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span>🏺</span>
+                    <h3>Organizadores de Botellas</h3>
+                </div>
+                <p>Corta la parte inferior de botellas grandes de plástico (como las de suavizante) y decóralas para usarlas como portalápices, macetas para semilleros o contenedores para guardar tornillos y objetos pequeños.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span>☕</span>
+                    <h3>Tazas o Vasos de Frascos</h3>
+                </div>
+                <p>Lava y esteriliza frascos de vidrio (mermelada, salsas). Puedes quitar la etiqueta con agua caliente y usarlos directamente como vasos para bebidas o tazas para postres con un toque rústico.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span>🖼️</span>
+                    <h3>Cajas de Cereal como Revisteros</h3>
+                </div>
+                <p>Cubre cajas de cereal vacías con papel decorativo o tela. Corta una abertura en diagonal en la parte superior para convertirlas en revisteros o en cajas para archivar documentos ligeros y organizar tu escritorio.</p>
+            </div>
+
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span>🧶</span>
+                    <h3>Hilo y Tela de Ropa Vieja</h3>
+                </div>
+                <p>No tires la ropa que ya no sirve. Las camisetas de algodón se pueden cortar en tiras para crear "trapillo" y tejer alfombras o canastas. Los pantalones de mezclilla pueden transformarse en bolsos resistentes o parches.</p>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <a href="{{ url_for('index') }}" class="btn-back">← Volver al Panel de Control</a>
+        </div>
+    </main>
+
+    <footer>
+       &copy; 2025 MI sitio web Briseida Rojas
+    </footer>
+
+</body>
+</html>

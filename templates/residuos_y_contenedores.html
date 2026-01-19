@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Residuos | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0;
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex; flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            width: 100%;
+            padding: 25px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-intro {
+            grid-column: 1 / -1;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contenedor-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 10px solid;
+        }
+
+        .contenedor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contenedor-card i { font-size: 50px; display: block; margin-bottom: 15px; }
+        .contenedor-card h3 { margin: 10px 0; font-size: 1.4rem; }
+        .contenedor-card p { font-size: 0.95rem; color: #546e7a; line-height: 1.6; }
+
+        .blue { border-color: #1E88E5; }   
+        .yellow { border-color: #FDD835; } 
+        .green { border-color: #43A047; }  
+        .grey { border-color: #757575; }   
+
+        .btn-back {
+            grid-column: 1 / -1;
+            margin: 30px auto;
+            padding: 12px 40px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-back:hover { background-color: #0d47a1; }
+
+        footer { padding: 20px; color: #78909c; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🗑️ Guía de Contenedores y Residuos</h1>
+    </header>
+
+    <main class="container">
+        <div class="info-intro">
+            <h2>¿Dónde depositar cada residuo?</h2>
+            <p>Aprende a identificar el contenedor correcto para mejorar el proceso de reciclaje.</p>
+        </div>
+
+        <div class="contenedor-card blue">
+            <i>🟦</i>
+            <h3>Papel y Cartón</h3>
+            <p>Periódicos, revistas, folletos publicitarios, cajas de cartón y envases de papel limpios sobres, libretas y papel de oficina. <b>No</b> depositar Servilletas, pañuelos usados, papel higiénico, Papel plastificado o encerado, Cartones con restos de comida (pizza, leche, grasa) .</p>
+        </div>
+
+        <div class="contenedor-card yellow">
+            <i>🟨</i>
+            <h3>Envases y Plásticos</h3>
+            <p>Botellas de plástico y envases de alimentos (yogur, leche, aceite), Latas de conservas y refrescos, Briks de leche, zumos y salsas, Bolsas de plástico limpias y envoltorios reciclables. <b>No</b>Depositar  Plásticos contaminados con restos de comida, Film plástico, vasos desechables de café, pajillas (en muchos lugares no se reciclan), Plásticos mezclados con metal o papel (como algunos empaques de snacks). </p>
+                    </div>
+
+        <div class="contenedor-card green">
+            <i>🟩</i>
+            <h3>Vidrio</h3>
+            <p>Plásticos contaminados con restos de comida, Film plástico, vasos desechables de café, pajillas (en muchos lugares no se reciclan), Plásticos mezclados con metal o papel (como algunos empaques de snacks) <b>No</b> depositar Vidrio plano como espejos o ventanas, Cristalería rota, vajilla o bombillas, Vidrio con restos químicos o metálicos</p>
+        </div>
+
+        <div class="contenedor-card grey">
+            <i>⬜</i>
+            <h3>Restos / Otros</h3>
+            <p>Colillas, pañales y restos de higiene personal, Cerámica rota, vajilla y espejos, Residuos no reciclables de cocina (cáscaras grandes de huevo, restos muy sucios). <b>No</b>depositar Sustancias químicas peligrosas (pintura, baterías, aceite usado) → requieren puntos limpios especiales, Aparatos electrónicos → deben ir a centros de reciclaje de RAEE (Residuos de Aparatos Eléctricos y Electrónicos)</p>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn-back">← Volver al Menú Principal</a>
+    </main>
+
+    <footer>
+        &copy; 2025 MI sitio web Briseida Rojas
+    </footer>
+
+</body>
+</html>

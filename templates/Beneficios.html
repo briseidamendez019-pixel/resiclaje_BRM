@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacto y Beneficios | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0; 
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --accent-green: #2E7D32;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex; flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header h1 { margin: 0; font-size: 26px; font-weight: 600; }
+
+        .main-container {
+            max-width: 900px;
+            width: 90%;
+            margin: 40px 0;
+            background: var(--white);
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .intro-title {
+            text-align: center;
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .benefit-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f8fafc;
+            border-left: 6px solid var(--accent-green);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateX(12px);
+            background-color: #f1f5f9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .icon-circle {
+            min-width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .benefit-content h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+        }
+
+        .benefit-content p {
+            margin: 0;
+            line-height: 1.7;
+            color: #4a5568;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .nav-footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-return {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(21, 101, 192, 0.2);
+        }
+
+        .btn-return:hover {
+            background-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(21, 101, 192, 0.3);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 25px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☀️ Impacto y Beneficios del Reciclaje</h1>
+    </header>
+
+    <main class="main-container">
+        <div class="intro-title">
+            El Reciclaje Inteligente impacta positivamente en nuestro planeta y sociedad.
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-circle">🌍</div>
+            <div class="benefit-content">
+                <h3>Protección del Medio Ambiente</h3>
+                <p>El reciclaje reduce la necesidad de extraer nuevas materias primas, lo que a su vez disminuye la contaminación del aire, el agua y el suelo causada por la minería y la fabricación.
+                <p>En plantas inteligentes, los residuos de vidrio y plásticos contaminados pueden ser tratados para producir materiales de construcción como ladrillos o adoquines, reduciendo la presión sobre recursos naturales.
+                </p>
+            </div>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-circle">⚡</div>
+            <div class="benefit-content">
+                <h3>Ahorro de Energía</h3>
+                <p>Fabricar productos a partir de materiales reciclados consume significativamente menos energía que producirlos a partir de materiales vírgenes de la naturaleza.</p>
+            </div>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-circle">📉</div>
+            <div class="benefit-content">
+                <h3>Reducción de Residuos en Vertederos</h3>
+                <p>Al reciclar, desviamos toneladas de desechos de los vertederos, conservando espacio y reduciendo las emisiones de gases de efecto invernadero como el metano.
+                <p>Existen sistemas que combinan residuos de cocina y restos de podas para producir biogás urbano, suficiente para abastecer gas de cocina o calefacción en barrios completos.</p>
+            </div>
+        </div>
+
+        <div class="benefit-card">
+            <div class="icon-circle">💰</div>
+            <div class="benefit-content">
+                <h3>Desarrollo Económico y Empleo</h3>
+                <p>La industria del reciclaje y el tratamiento de residuos genera miles de empleos en las etapas de recolección, clasificación y reprocesamiento de materiales.
+                <p>Los vertederos convencionales generan metano, pero el reciclaje inteligente de orgánicos permite capturar este gas para producir electricidad, convirtiendo un problema en recurso energético.</p>
+            </div>
+        </div>
+
+        <div class="nav-footer">
+            <a href="{{ url_for('index') }}" class="btn-return">← Volver al Panel de Control</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 MI sitio web Briseida Rojas
+    </footer>
+
+</body>
+</html>

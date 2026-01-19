@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0;
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --accent-green: #4CAF50;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex; flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 24px; font-weight: 600; }
+
+        .content-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 40px 0;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--accent-green);
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #546e7a;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        b, strong { color: var(--text-dark); }
+
+        .image-wrapper {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #e3f2fd;
+            display: inline-block;
+        }
+
+        .image-wrapper img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            width: 350px; 
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #0d47a1;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>♻️ El Reciclaje Inteligente</h1>
+    </header>
+
+    <main class="content-container">
+        <h2>¿Qué es?</h2>
+        
+        <p>
+            El <strong>reciclaje inteligente</strong> no se limita solo a separar residuos por color o tipo. Se trata de un <strong>sistema que combina tecnología, análisis de datos y comportamiento humano para optimizar todo el ciclo de los residuos,</strong> desde que se generan hasta que se reutilizan o transforman.
+
+        <p>
+            A diferencia del reciclaje tradicional, el reciclaje inteligente<strong> aprende de los hábitos de las personas y se adapta a ellos,</strong>buscando reducir errores y desperdicios que normalmente pasan desapercibidos.
+        
+        <p>
+            <strong>Cómo funciona el reciclaje inteligente</strong>
+        
+
+        <P><strong>1. Detección y clasificación automática de residuos</strong>
+        
+        <P><strong>2. Optimización de rutas y logística</strong>
+        
+        <P><strong>3. Análisis de hábitos y predicción de residuo</strong>
+        
+        <P><strong>4. Reciclaje de materiales complejos o difíciles</strong>
+        
+        <P><strong>5. Trazabilidad y control mediante tecnología avanzada</strong>
+        
+        <P>El reciclaje inteligente es, en definitiva, un sistema integral que combina <strong> tecnología avanzada, inteligencia artificial, robótica y participación ciudadana </strong> para maximizar la eficiencia en la gestión de residuos. Su objetivo no es solo separar materiales, sino <strong> reducir desperdicios, recuperar recursos valiosos, generar energía y educar a la población </strong> , adaptándose continuamente a los hábitos humanos y a la complejidad de los materiales modernos.
+        
+        </p>
+           
+           
+
+        <div class="image-wrapper">
+            <img src="https://img.freepik.com/vector-premium/concepto-ecologia-simbolo-reciclaje-estilo-garabato-dibujado-mano_6997-3134.jpg" alt="Logo Reciclaje">
+        </div>
+
+        <br>
+        <a href="{{ url_for('index') }}" class="btn-back">← Volver al Menú</a>
+    </main>
+
+    <footer>
+        &copy; 2025 MI sitio web Briseida Rojas
+    </footer>
+
+</body>
+</html>

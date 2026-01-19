@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consecuencias | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0; 
+            --danger-red: #C62828;  
+            --bg-light: #F8F9FA;
+            --white: #ffffff;
+            --text-dark: #1A202C;
+        }
+
+        body {
+            margin: 0; padding: 0; font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light); color: var(--text-dark);
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--danger-red); 
+            padding: 35px 0; text-align: center; color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header h1 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: 1px; }
+
+        .container {
+            max-width: 900px; width: 90%; margin: 40px auto;
+        }
+
+        .intro-alert {
+            background: #FFEBEE; border-left: 6px solid var(--danger-red);
+            padding: 20px; border-radius: 8px; margin-bottom: 30px;
+            color: #B71C1C; font-weight: 600; text-align: center;
+        }
+
+        .consequences-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .consequence-card {
+            background: var(--white); padding: 30px; border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s ease; border: 1px solid #F1F5F9;
+        }
+
+        .consequence-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(198, 40, 40, 0.1);
+            border-color: var(--danger-red);
+        }
+
+        .icon-box {
+            font-size: 2.5rem; margin-bottom: 15px; display: block;
+        }
+
+        .consequence-card h3 {
+            color: var(--danger-red); margin: 0 0 12px 0; font-size: 1.3rem;
+        }
+
+        .consequence-card p {
+            line-height: 1.7; color: #4A5568; margin: 0; font-size: 1rem;
+        }
+
+        .btn-nav {
+            display: block; width: fit-content; margin: 40px auto;
+            background-color: var(--primary-blue); color: white;
+            padding: 14px 40px; text-decoration: none; border-radius: 10px;
+            font-weight: 600; transition: all 0.3s;
+        }
+
+        .btn-nav:hover { background-color: #0D47A1; transform: scale(1.05); }
+
+        footer { margin-top: auto; padding: 25px; text-align: center; color: #A0AEC0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>⚠️ El Costo de No Reciclar</h1>
+    </header>
+
+    <main class="container">
+        <div class="intro-alert">
+            Ignorar el reciclaje inteligente tiene efectos devastadores e irreversibles para nuestro entorno.
+        </div>
+
+        <div class="consequences-grid">
+            <div class="consequence-card">
+                <span class="icon-box">🌊</span>
+                <h3>Contaminación de Océanos</h3>
+                <p>Miles de toneladas de plástico terminan en el mar cada año, destruyendo ecosistemas marinos y entrando en la cadena alimenticia humana.
+                
+                <p>Cada año, aproximadamente 8 millones de toneladas de plástico llegan a los océanos, formando islas de basura como el famoso “Gran Parche de Basura del Pacífico”.
+
+Los microplásticos (partículas menores a 5 mm) no solo afectan a peces y aves, sino que penetran en la cadena alimenticia humana, apareciendo incluso en sal, miel y agua potable.
+
+Plásticos no biodegradables liberan aditivos químicos peligrosos, como ftalatos y bisfenoles, que alteran hormonas y afectan la salud de especies marinas y humanas.
+
+Dato poco común:</p>
+            </div>
+
+            <div class="consequence-card">
+                <span class="icon-box">🌡️</span>
+                <h3>Aceleración del Cambio Climático</h3>
+                <p>La fabricación de productos nuevos genera mucho más CO2 que el reciclaje, lo que aumenta la temperatura global y los desastres naturales.
+                <p>La producción de materiales vírgenes (plásticos, metales, papel) genera muchas veces más emisiones de CO₂ que la reutilización de materiales reciclados.
+
+Ignorar el reciclaje aumenta la necesidad de extracción y transporte de recursos, lo que incrementa la huella de carbono de industrias enteras.
+
+La descomposición de residuos orgánicos en vertederos genera metano, un gas de efecto invernadero 25 veces más potente que el CO₂.</p>
+            </div>
+
+            <div class="consequence-card">
+                <span class="icon-box">😷</span>
+                <h3>Problemas de Salud Pública</h3>
+                <p>La acumulación de basura en vertederos mal gestionados libera gases tóxicos y contamina el agua subterránea que consumimos.
+                <p>Vertederos sin control liberan líquidos tóxicos (lixiviados) que contaminan acuíferos y suelos agrícolas, afectando el agua potable y la alimentación local.
+
+La quema de basura a cielo abierto produce dioxinas y furanos, compuestos cancerígenos y disruptores endocrinos.
+
+Plásticos y residuos electrónicos liberan nanopartículas y metales pesados, que pueden llegar al aire, el agua y los alimentos.</p>
+            </div>
+
+            <div class="consequence-card">
+                <span class="icon-box">🦅</span>
+                <h3>Pérdida de Biodiversidad</h3>
+                <p>La extracción desmedida de recursos destruye hábitats naturales, llevando a miles de especies a la extinción total.
+                <p>La extracción desmedida de recursos (minerales, madera, petróleo) destruye hábitats enteros, provocando la desaparición de especies que ni siquiera se habían documentado.
+
+La basura que llega a ríos y océanos provoca muerte por ingestión o enredo en animales marinos y aves.
+
+La contaminación por plásticos y químicos altera cadenas tróficas enteras, afectando la reproducción y supervivencia de especies clave.</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn-nav">← Regresar al Panel Seguro</a>
+    </main>
+
+    <footer>
+       &copy; 2025 MI sitio web Briseida Rojas
+    </footer>
+
+</body>
+</html>

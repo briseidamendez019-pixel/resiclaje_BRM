@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal | Reciclaje Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1565C0; 
+            --accent-cyan: #00ACC1;  
+            --bg-light: #E3F2FD;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+        }
+        body { margin:0; padding:0; font-family:'Inter', sans-serif; background-color:var(--bg-light); color:var(--text-dark); display:flex; flex-direction:column; min-height:100vh; }
+        header { background-color: var(--primary-blue); padding: 30px 0; text-align: center; color: white; box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+        header h1 { margin:0; font-size:26px; font-weight:700; }
+        .container { max-width:1000px; width:90%; margin:50px auto; text-align:center; }
+        .welcome-text { font-size:1.5rem; color:var(--primary-blue); margin-bottom:40px; font-weight:600; }
+        .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+        .btn-menu { background-color: var(--white); color: var(--primary-blue); padding:35px 20px; text-decoration:none; border-radius:15px; font-weight:600; font-size:1.1rem; box-shadow:0 6px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; display:flex; flex-direction:column; align-items:center; border:1px solid #e2e8f0; }
+        .btn-menu:hover { transform: translateY(-8px); background-color: var(--primary-blue); color:white; box-shadow:0 12px 20px rgba(21,101,192,0.2); }
+        .btn-menu span { font-size:2.5rem; margin-bottom:15px; }
+        .btn-consecuencias { border-left:6px solid #e53e3e; }
+        .btn-gestion { background-color:#f8fafc; border:1px dashed var(--primary-blue); }
+        .btn-logout { margin-top:50px; background-color:#ef5350; color:white; padding:12px 30px; border-radius:8px; text-decoration:none; font-weight:600; display:inline-block; transition:background 0.3s; }
+        .btn-logout:hover { background-color:#d32f2f; }
+        footer { margin-top:auto; padding:25px; color:#78909c; font-size:0.85rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>♻️ Reciclaje Inteligente</h1>
+</header>
+
+<main class="container">
+    <div class="welcome-text">Bienvenido al menú</div>
+
+    <div class="menu-grid">
+        <a href="{{ url_for('que_es') }}" class="btn-menu"><span>📖</span> Conceptos</a>
+        <a href="{{ url_for('residuos') }}" class="btn-menu"><span>🗑️</span> Guía de Residuos</a>
+        <a href="{{ url_for('beneficios') }}" class="btn-menu"><span>🌿</span> Impacto y Beneficios</a>
+        <a href="{{ url_for('ideas') }}" class="btn-menu"><span>💡</span> Ideas Creativas</a>
+        <a href="{{ url_for('consecuencias') }}" class="btn-menu btn-consecuencias"><span>⚠️</span> Consecuencias</a>
+        <a href="{{ url_for('reciclaje') }}" class="btn-menu"><span>♻️</span> Reciclaje</a>
+        <a href="{{ url_for('encuesta') }}" class="btn-menu"><span>📝</span> Encuesta</a>
+
+        {% if current_user.is_authenticated and current_user.rol == 'admin' %}
+            <a href="{{ url_for('gestion') }}" class="btn-menu btn-gestion"><span>⚙️</span> Gestión de Usuarios</a>
+            <a href="{{ url_for('resultados') }}" class="btn-menu"><span>📊</span> Resultados Encuesta</a>
+        {% endif %}
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="btn-logout">Cerrar Sesión</a>
+</main>
+
+<footer>
+    &copy; 2025 Mi sitio web Briseida Rojas
+</footer>
+
+</body>
+</html>

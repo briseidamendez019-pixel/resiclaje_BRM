@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestión de Usuarios | Panel Administrativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body { font-family:'Inter', sans-serif; background:#E3F2FD; margin:0; padding:0; display:flex; flex-direction:column; min-height:100vh; }
+header { background:#1565C0; color:white; text-align:center; padding:30px 0; }
+.container { max-width:900px; width:95%; margin:40px auto; background:white; padding:40px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.05); }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:12px; border-bottom:1px solid #edf2f7; text-align:left; }
+th { background:#1565C0; color:white; }
+tr:hover { background:#f8fafc; }
+.btn-delete { background:#ef5350; color:white; padding:6px 12px; border-radius:6px; font-weight:600; text-decoration:none; }
+.btn-delete:hover { background:#d32f2f; }
+.back-link { display:block; margin-top:30px; text-align:center; color:#1565C0; font-weight:600; }
+.back-link:hover { text-decoration:underline; }
+footer { margin-top:auto; padding:25px; text-align:center; color:#94a3b8; font-size:0.85rem; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>⚙️ Gestión de Usuarios</h1>
+</header>
+
+<main class="container">
+<table>
+<tr>
+    <th>ID</th>
+    <th>Correo</th>
+    <th>Acción</th>
+</tr>
+{% for usuario in usuarios %}
+<tr>
+    <td>{{ usuario.id }}</td>
+    <td>{{ usuario.correo }}</td>
+    <td>
+        {% if usuario.id != current_user.id %}
+        <a href="{{ url_for('eliminar_usuario', id=usuario.id) }}" class="btn-delete" onclick="return confirm('¿Seguro que quieres eliminar a {{ usuario.correo }}?');">Eliminar</a>
+        {% else %}
+        No puedes eliminarte
+        {% endif %}
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="{{ url_for('index') }}" class="back-link">← Volver al Menú Principal</a>
+</main>
+
+<footer>
+&copy; 2025 Mi sitio web Briseida Rojas
+</footer>
+
+</body>
+</html>
